@@ -1,0 +1,18 @@
+ Port and Adapter (Hexagonal Architecture) – Dummy Data ile Basit Java Örneği
+
+ - Bu örnekte Port ve Adapter (Hexagonal Architecture) mimarisini kullanarak basit bir "Kitap Yönetim Sistemi" (Book Management System) oluşturacağız.
+
+ - Ne Yapacağız?
+    * Kitapları listeleyebileceğiz.
+    * Dummy verilerle başlangıç yapacağız.
+    * Veritabanı yerine InMemoryBookRepository (Bellek içi adapter) kullanacağız.
+    * API üzerinden kitap ekleyebileceğiz.
+
+
+- Yukarıdaki şekil Hexagonal Architecture'ın temel yapısını göstermektedir:
+
+    Inbound Adapter → BookRestAdapter (REST API) dış dünyadan gelen istekleri alır.
+    Inbound Port → BookServicePort iş mantığını yönetir.
+    Outbound Port → BookRepositoryPort, veri erişimini soyutlar.
+    Outbound Adapter → InMemoryBookAdapter (Dummy DB), veriyi yönetir.
+    Domain Entity → Book, iş mantığının merkezinde yer alır.
